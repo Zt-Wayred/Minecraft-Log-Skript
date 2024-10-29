@@ -1,0 +1,74 @@
+#-----config-----#
+options:
+    botname: nixes #bot name
+    token: ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt #token bot
+    logirp: 1208403034657529987 #log irp
+    logop: 1208403034657529987 #log op deop
+    logban: 1208403034657529987 #log bans
+    logmute: 1208403034657529987 #log mute
+    loginv: 1208403034657529987 #log inventory
+    logv: 1208403034657529987 #log v
+
+
+#-----لا تلعب هنا-----#
+define new bot named "{@botname}":
+    token: "{@token}"
+    intents: default intents
+
+
+#-----حالة البوت-----#
+on load:
+    set online status of bot "{@botname}" to online
+    set presence of bot "{@botname}" to playing "with [%player count%] players!"
+
+
+
+
+#-----------------------#
+on command:
+    if the command is "irp" or "ir":
+        make embed:
+            set embed color of embed to hex "008eff"
+            set description of embed to "**nixes logs** %nl%%nl% **%executor%** : `/%full command%`"
+        post last made embed to text channel with id  "{@logirp}"
+
+
+on command:
+    if the command is "op" or "deop":
+        make embed:
+            set embed color of embed to hex "008eff"
+            set description of embed to "**nixes logs** %nl%%nl%  **%executor%** : `/%full command%`"
+        post last made embed to text channel with id  "{@logop}"
+
+
+on command:
+    if the command is "ban" or "tempban" or "unban":
+        make embed:
+            set embed color of embed to hex "008eff"
+            set description of embed to "**nixes logs** %nl%%nl%  **%executor%** : `/%full command%`"
+        post last made embed to text channel with id  "{@logban}"
+
+
+on command:
+    if the command is "unmute" or "tempmute" or "mute":
+        make embed:
+            set embed color of embed to hex "008eff"
+            set description of embed to "**nixes logs** %nl%%nl%  **%executor%** : `/%full command%`"
+        post last made embed to text channel with id  "{@logmute}"
+
+
+
+on command:
+    if the command is "invsee" or "endersee":
+        make embed:
+            set embed color of embed to hex "008eff"
+            set description of embed to "**nixes logs** %nl%%nl%  **%executor%** : `/%full command%`"
+        post last made embed to text channel with id  "{@loginv}"
+
+
+on command:
+    if the command is "v"
+        make embed:
+            set embed color of embed to hex "008eff"
+            set description of embed to "**nixes logs** %nl%%nl% **%executor%** : `/%full command%`"
+        post last made embed to text channel with id  "{@logv}"
