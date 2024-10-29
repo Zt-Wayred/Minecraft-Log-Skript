@@ -1,7 +1,7 @@
-#-----config-----#
+
 options:
-    botname: nixes #bot name
-    token: ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt #token bot
+    botname:  #bot name
+    token:  #token bot
     logirp: 1208403034657529987 #log irp
     logop: 1208403034657529987 #log op deop
     logban: 1208403034657529987 #log bans
@@ -10,13 +10,12 @@ options:
     logv: 1208403034657529987 #log v
 
 
-#-----لا تلعب هنا-----#
+
 define new bot named "{@botname}":
     token: "{@token}"
     intents: default intents
 
 
-#-----حالة البوت-----#
 on load:
     set online status of bot "{@botname}" to online
     set presence of bot "{@botname}" to playing "with [%player count%] players!"
@@ -24,7 +23,6 @@ on load:
 
 
 
-#-----------------------#
 on command:
     if the command is "irp" or "ir":
         make embed:
